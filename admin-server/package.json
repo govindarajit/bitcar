@@ -1,0 +1,82 @@
+{
+  "name": "bitcar-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BitCar System",
+  "author": "Mobytelab <developer@mobytelab.com>",
+  "license": "MIT",
+  "engines": {
+    "yarn": "*",
+    "node": ">=8"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.353.0",
+    "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "debug": "^4.1.0",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "express-validation": "^1.0.2",
+    "fcm-call": "^2.0.0",
+    "fcm-node": "^1.3.0",
+    "helmet": "^3.15.0",
+    "http-status": "^1.2.0",
+    "joi": "^14.0.4",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.11",
+    "method-override": "^3.0.0",
+    "moment-timezone": "^0.5.23",
+    "mongoose": "^5.3.10",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "multer-s3": "^2.9.0",
+    "node-cron": "^2.0.3",
+    "node-mailjet": "^3.3.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "rotating-file-stream": "^1.3.9",
+    "uuid": "^3.3.2",
+    "voucher-code-generator": "^1.1.1",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.1.3",
+    "lint-staged": "^8.0.4",
+    "prettier": "^1.15.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --no-ignore --fix",
+      "git add --force"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
+  "scripts": {
+    "start": "cross-env ENV=development node src/index.js",
+    "start:uat": "cross-env ENV=uat node src/index.js",
+    "start:staging": "cross-env ENV=staging node src/index.js",
+    "start:prod": "cross-env ENV=production node src/index.js",
+    "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
+    "fix": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix ."
+  }
+}

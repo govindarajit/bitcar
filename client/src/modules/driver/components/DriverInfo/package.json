@@ -1,0 +1,6 @@
+{
+  "name": "DriverInfo",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./DriverInfo.js"
+}

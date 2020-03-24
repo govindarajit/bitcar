@@ -1,0 +1,6 @@
+{
+  "name": "Rider",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Rider.js"
+}

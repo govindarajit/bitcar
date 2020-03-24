@@ -1,0 +1,6 @@
+{
+  "name": "AddRider",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./AddRider.js"
+}
